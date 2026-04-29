@@ -243,17 +243,20 @@ main{
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.10);
   border-radius: var(--radius);
-  padding: 14px 16px;
+  padding: 12px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 .timeline-role{
   font-weight: 800;
-  margin-bottom: 6px;
+  margin: 0;
 }
 .timeline-org, .timeline-dates, .timeline-loc{
   color: var(--muted);
   font-weight: 650;
   font-size: 13px;
-  margin-top: 6px;
+  margin: 0;
 }
 
 .tag-wrap{
@@ -306,6 +309,9 @@ main{
     grid-template-columns: 1fr;
   }
   .timeline-item{
+    grid-template-columns: 1fr;
+  }
+  .grid-2{
     grid-template-columns: 1fr;
   }
   .grid-3{
