@@ -1,13 +1,13 @@
 :root{
-  --bg: #0b1220;
-  --panel: rgba(255,255,255,0.06);
-  --panel-2: rgba(255,255,255,0.09);
-  --text: rgba(255,255,255,0.92);
-  --muted: rgba(255,255,255,0.68);
-  --border: rgba(255,255,255,0.12);
+  /* Visual system tuned for recruiter readability */
+  --bg: #0b1020;
+  --panel: rgba(148, 163, 184, 0.10); /* slate */
+  --panel-2: rgba(148, 163, 184, 0.14);
+  --text: rgba(226, 232, 240, 0.96);
+  --muted: rgba(226, 232, 240, 0.72);
+  --border: rgba(148, 163, 184, 0.24);
   --accent: #7c5cff;
-  --accent-2: #22c55e;
-  --shadow: 0 14px 40px rgba(0,0,0,0.35);
+  --shadow: 0 18px 50px rgba(0,0,0,0.40);
   --radius: 16px;
 }
 
@@ -22,8 +22,8 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color: var(--text);
   background:
-    radial-gradient(900px 420px at 10% -10%, rgba(124,92,255,0.35), transparent 60%),
-    radial-gradient(700px 380px at 90% 0%, rgba(34,197,94,0.22), transparent 55%),
+    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,0.26), transparent 60%),
+    radial-gradient(750px 420px at 90% 0%, rgba(59,130,246,0.16), transparent 55%),
     var(--bg);
   line-height: 1.5;
 }
@@ -84,21 +84,11 @@ body{
 .pill{
   font-size: 13px;
   color: var(--text);
-  background: rgba(124,92,255,0.12);
-  border: 1px solid rgba(124,92,255,0.22);
+  background: rgba(124,92,255,0.14);
+  border: 1px solid rgba(124,92,255,0.28);
   padding: 6px 10px;
   border-radius: 999px;
 }
-.pill:nth-child(2){
-  background: rgba(34,197,94,0.10);
-  border-color: rgba(34,197,94,0.22);
-}
-.pill:nth-child(3){
-  background: rgba(255,255,255,0.06);
-  border-color: rgba(255,255,255,0.12);
-  color: var(--muted);
-}
-
 .contact-card{
   background: var(--panel);
   border: 1px solid var(--border);
@@ -170,10 +160,11 @@ main{
   margin: 0 0 12px;
   font-size: 22px;
   letter-spacing: -0.2px;
+  color: rgba(226, 232, 240, 0.92);
 }
 .lead{
   margin: 0;
-  color: rgba(255,255,255,0.84);
+  color: var(--muted);
   font-size: 16px;
   max-width: 78ch;
 }
@@ -204,7 +195,8 @@ main{
 }
 
 .card-accent{
-  background: linear-gradient(180deg, rgba(124,92,255,0.18), rgba(255,255,255,0.05));
+  /* Subtle accent so it doesn't look like a different theme */
+  background: rgba(124,92,255,0.10);
   border-color: rgba(124,92,255,0.26);
 }
 
@@ -223,7 +215,7 @@ main{
 .bullets{
   padding-left: 18px;
   margin: 0;
-  color: rgba(255,255,255,0.86);
+  color: var(--text);
 }
 .bullets li{
   margin: 10px 0;
@@ -240,8 +232,8 @@ main{
   gap: 14px;
 }
 .timeline-meta{
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.10);
+  background: var(--panel-2);
+  border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 12px 14px;
   display: flex;
@@ -272,9 +264,9 @@ main{
   align-items: center;
   padding: 7px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(255,255,255,0.13);
-  background: rgba(255,255,255,0.06);
-  color: rgba(255,255,255,0.86);
+  border: 1px solid var(--border);
+  background: rgba(124,92,255,0.06);
+  color: var(--text);
   font-weight: 650;
   font-size: 13px;
   list-style: none;
