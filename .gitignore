@@ -1,0 +1,2 @@
+# Resume PDFs stay local only — site content is mirrored in index.html
+*.pdf

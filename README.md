@@ -3,9 +3,10 @@
 This repo hosts a simple, single-page portfolio built with plain HTML/CSS.
 
 ## Contents
-- `index.html` - main page
+- `index.html` - main page (resume content lives here)
 - `styles.css` - styling
-- `ChaitanyaNathSingh.pdf` - downloadable resume (already included)
+
+Resume PDFs are not tracked in git; keep your `.pdf` locally if you need a file copy. The live site reflects your resume in HTML.
 
 ## Deploy to GitHub Pages
 1. Create a new GitHub repository (or reuse an existing one).
