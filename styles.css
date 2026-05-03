@@ -1,9 +1,11 @@
 :root{
   /* Visual system tuned for recruiter readability */
-  --bg: #0e141f;
+  --bg: #111822;
   --panel: rgba(148, 163, 184, 0.10); /* slate */
   --panel-2: rgba(148, 163, 184, 0.14);
   --text: rgba(226, 232, 240, 0.96);
+  /* Body copy: one consistent shade so paragraphs don’t “shift” over page gradients */
+  --prose: rgba(226, 232, 240, 0.88);
   --muted: rgba(226, 232, 240, 0.72);
   --border: rgba(148, 163, 184, 0.24);
   --accent: #7c5cff;
@@ -21,12 +23,12 @@ body{
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color: var(--text);
-  /* Calm, low-contrast background — soft slate base with very subtle cool accents */
-  background:
-    radial-gradient(1200px 560px at 12% -8%, rgba(100, 116, 139, 0.14), transparent 58%),
-    radial-gradient(900px 480px at 88% 4%, rgba(71, 85, 105, 0.10), transparent 55%),
-    linear-gradient(180deg, #121a28 0%, var(--bg) 38%, #0a0f18 100%);
-  line-height: 1.5;
+  /* Uniform base — avoids paragraph-to-paragraph “colour jumps” from heavy vertical gradients */
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 50% -40%, rgba(71, 85, 105, 0.14), transparent 55%);
+  background-repeat: no-repeat;
+  line-height: 1.6;
 }
 
 .skip-link{
@@ -165,13 +167,14 @@ main{
 }
 .lead{
   margin: 0;
-  color: var(--muted);
+  color: var(--prose);
   font-size: 16px;
   max-width: 78ch;
 }
 .lead-tight{
   margin-top: 14px;
   max-width: 78ch;
+  color: var(--prose);
 }
 
 .grid-2{
@@ -220,7 +223,7 @@ main{
 .bullets{
   padding-left: 18px;
   margin: 0;
-  color: var(--text);
+  color: var(--prose);
 }
 .bullets li{
   margin: 10px 0;
