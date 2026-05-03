@@ -1,6 +1,6 @@
 :root{
   /* Visual system tuned for recruiter readability */
-  --bg: #0b1020;
+  --bg: #0e141f;
   --panel: rgba(148, 163, 184, 0.10); /* slate */
   --panel-2: rgba(148, 163, 184, 0.14);
   --text: rgba(226, 232, 240, 0.96);
@@ -21,10 +21,11 @@ body{
   margin: 0;
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
   color: var(--text);
+  /* Calm, low-contrast background — soft slate base with very subtle cool accents */
   background:
-    radial-gradient(1000px 500px at 10% -10%, rgba(124,92,255,0.26), transparent 60%),
-    radial-gradient(750px 420px at 90% 0%, rgba(59,130,246,0.16), transparent 55%),
-    var(--bg);
+    radial-gradient(1200px 560px at 12% -8%, rgba(100, 116, 139, 0.14), transparent 58%),
+    radial-gradient(900px 480px at 88% 4%, rgba(71, 85, 105, 0.10), transparent 55%),
+    linear-gradient(180deg, #121a28 0%, var(--bg) 38%, #0a0f18 100%);
   line-height: 1.5;
 }
 
@@ -166,6 +167,10 @@ main{
   margin: 0;
   color: var(--muted);
   font-size: 16px;
+  max-width: 78ch;
+}
+.lead-tight{
+  margin-top: 14px;
   max-width: 78ch;
 }
 
