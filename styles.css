@@ -1,15 +1,16 @@
 :root{
-  /* Visual system tuned for recruiter readability */
-  --bg: #111822;
-  --panel: rgba(148, 163, 184, 0.10); /* slate */
-  --panel-2: rgba(148, 163, 184, 0.14);
-  --text: rgba(226, 232, 240, 0.96);
+  /* Warm neutrals + violet accent — avoids cold slate/blue-grays */
+  --bg: #151318;
+  --panel: rgba(210, 205, 218, 0.07);
+  --panel-2: rgba(210, 205, 218, 0.10);
+  --text: rgba(238, 236, 242, 0.96);
   /* Body copy: one consistent shade so paragraphs don’t “shift” over page gradients */
-  --prose: rgba(226, 232, 240, 0.88);
-  --muted: rgba(226, 232, 240, 0.72);
-  --border: rgba(148, 163, 184, 0.24);
-  --accent: #7c5cff;
-  --shadow: 0 18px 50px rgba(0,0,0,0.40);
+  --prose: rgba(232, 229, 237, 0.88);
+  --muted: rgba(205, 200, 215, 0.78);
+  --border: rgba(165, 158, 178, 0.26);
+  --accent: #8b74e8;
+  --accent-rgb: 139, 116, 232;
+  --shadow: 0 18px 50px rgba(0,0,0,0.42);
   --radius: 16px;
 }
 
@@ -26,7 +27,7 @@ body{
   /* Uniform base — avoids paragraph-to-paragraph “colour jumps” from heavy vertical gradients */
   background-color: var(--bg);
   background-image:
-    radial-gradient(ellipse 120% 80% at 50% -40%, rgba(71, 85, 105, 0.14), transparent 55%);
+    radial-gradient(ellipse 120% 85% at 50% -35%, rgba(var(--accent-rgb), 0.09), transparent 58%);
   background-repeat: no-repeat;
   line-height: 1.6;
 }
@@ -87,8 +88,8 @@ body{
 .pill{
   font-size: 13px;
   color: var(--text);
-  background: rgba(124,92,255,0.14);
-  border: 1px solid rgba(124,92,255,0.28);
+  background: rgba(var(--accent-rgb), 0.14);
+  border: 1px solid rgba(var(--accent-rgb), 0.30);
   padding: 6px 10px;
   border-radius: 999px;
 }
@@ -122,7 +123,24 @@ body{
   text-decoration: none;
   font-weight: 550;
 }
-.contact-link:hover{ color: rgba(255,255,255,1); text-decoration: underline; }
+.contact-link:hover{
+  color: rgba(245, 242, 255, 1);
+  text-decoration: underline;
+}
+.contact-link:focus-visible{
+  outline: 2px solid rgba(var(--accent-rgb), 0.55);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+/* Browsers color :visited separately — keep links on the warm palette */
+a.contact-link:visited,
+a.button:visited,
+a.skip-link:visited{
+  color: var(--text);
+}
+.footer-links a:visited{
+  color: var(--muted);
+}
 .contact-links{
   display: inline-flex;
   gap: 10px;
@@ -141,12 +159,15 @@ body{
   padding: 12px 14px;
   border-radius: 12px;
   text-decoration: none;
-  border: 1px solid rgba(124,92,255,0.35);
-  background: linear-gradient(180deg, rgba(124,92,255,0.25), rgba(124,92,255,0.15));
+  border: 1px solid rgba(var(--accent-rgb), 0.38);
+  background: linear-gradient(180deg, rgba(var(--accent-rgb), 0.26), rgba(var(--accent-rgb), 0.14));
   color: var(--text);
   font-weight: 700;
 }
-.button:hover{ border-color: rgba(124,92,255,0.55); text-decoration: none; }
+.button:hover{
+  border-color: rgba(var(--accent-rgb), 0.58);
+  text-decoration: none;
+}
 
 main{
   padding-bottom: 30px;
@@ -163,7 +184,7 @@ main{
   margin: 0 0 12px;
   font-size: 22px;
   letter-spacing: -0.2px;
-  color: rgba(226, 232, 240, 0.92);
+  color: var(--text);
 }
 .lead{
   margin: 0;
@@ -203,9 +224,8 @@ main{
 }
 
 .card-accent{
-  /* Subtle accent so it doesn't look like a different theme */
-  background: rgba(124,92,255,0.10);
-  border-color: rgba(124,92,255,0.26);
+  background: rgba(var(--accent-rgb), 0.09);
+  border-color: rgba(var(--accent-rgb), 0.28);
 }
 
 .card-title{
@@ -267,7 +287,7 @@ main{
   margin: 0;
 }
 .timeline-sep{
-  color: rgba(226, 232, 240, 0.45);
+  color: rgba(195, 188, 208, 0.55);
   font-weight: 800;
   font-size: 14px;
 }
@@ -286,7 +306,7 @@ main{
   padding: 7px 10px;
   border-radius: 999px;
   border: 1px solid var(--border);
-  background: rgba(124,92,255,0.06);
+  background: rgba(var(--accent-rgb), 0.07);
   color: var(--text);
   font-weight: 650;
   font-size: 13px;
@@ -315,7 +335,10 @@ main{
   color: var(--muted);
   text-decoration: none;
 }
-.footer-links a:hover{ text-decoration: underline; }
+.footer-links a:hover{
+  color: rgba(235, 232, 245, 0.92);
+  text-decoration: underline;
+}
 
 @media (max-width: 920px){
   .header-inner{
